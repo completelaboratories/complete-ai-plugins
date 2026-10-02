@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "complete": {
+      "serverUrl": "https://mcp.completelabs.com/mcp/complete",
+      "disabled": true,
+      "disabledTools": [
+        "propose-self-workout-reschedule"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Complete Laboratories, Inc.",
+  "mit_files": [
+    ".claude-plugin/plugin.json",
+    ".mcp.json",
+    "GEMINI.md",
+    "LICENSE",
+    "README.md",
+    "adapters/antigravity/mcp_config.json",
+    "adapters/antigravity/plugin.json",
+    "assets/NOTICE.md",
+    "clients/claude.mcp.json",
+    "clients/codex.toml",
+    "gemini-extension.json",
+    "license-scope.json",
+    "mcp.json",
+    "plugin.json",
+    "skills/complete-context/SKILL.md"
+  ],
+  "reserved_files": [
+    "assets/alt-logo.png",
+    "assets/brand-logo.png",
+    "assets/logo-square-draft.png",
+    "assets/logo.png"
+  ],
+  "reserved_notice": "assets/NOTICE.md",
+  "excluded_from_license": [
+    "proprietary backend",
+    "hosted service",
+    "service and user data",
+    "company trademarks",
+    "brand assets"
+  ],
+  "future_files": "Not automatically covered; explicit scope decision required."
+}

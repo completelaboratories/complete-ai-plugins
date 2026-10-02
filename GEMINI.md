@@ -1,0 +1,1 @@
+Use Complete only for explicitly authorized athlete context. List profiles before selecting one. Preserve dates, units, sources, freshness, uncertainty, and conflicting evidence. Do not infer missing values or copy sensitive context to a shared destination without permission. This distribution candidate has no credentials and requires release approval.

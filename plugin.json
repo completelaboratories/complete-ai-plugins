@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "complete",
+  "version": "0.1.0",
+  "description": "Retrieve authorized Complete athlete context with source and freshness information. Review candidate; service access is gated.",
+  "author": {
+    "name": "Complete Laboratories Inc",
+    "email": "support@completelabs.com",
+    "url": "https://completelabs.com"
+  },
+  "homepage": "https://completelabs.com",
+  "keywords": [
+    "athlete",
+    "training",
+    "development"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Complete",
+        "shortDescription": "Your athlete development",
+        "longDescription": "Read athlete profiles and development context explicitly authorized in Complete. Preserve source, freshness, and uncertainty. Scheduling proposals require a separate grant and athlete confirmation in Complete. Availability is subject to release approval.",
+        "developerName": "Complete Laboratories Inc",
+        "websiteURL": "https://completelabs.com",
+        "capabilities": [],
+        "logo": "./assets/logo-square-draft.png",
+        "composerIcon": "./assets/logo-square-draft.png",
+        "category": "Productivity"
+      }
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/completelaboratories/complete-ai-plugins"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "complete",
+  "version": "0.1.0",
+  "description": "Retrieve authorized athlete development context from Complete.",
+  "author": {
+    "name": "Complete Laboratories Inc",
+    "email": "support@completelabs.com",
+    "url": "https://completelabs.com"
+  }
+}
