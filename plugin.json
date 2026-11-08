@@ -23,10 +23,79 @@
         "longDescription": "Draft a private activity, plan a workout for it from Complete's catalog, and coordinate it with the people you invite. Invitations are sent only when you press Invite in the Complete card, and RSVPs and time choices are actions you take in the card. When everyone accepts the same time, Complete sends the calendar invitation. Complete cannot read health records or other people's calendars. Access is invite-only and requires a Complete account.",
         "developerName": "Complete Laboratories Inc",
         "websiteURL": "https://completelabs.com",
-        "capabilities": [],
+        "capabilities": [
+          "Draft activities",
+          "Plan workouts",
+          "Coordinate times and invitations"
+        ],
         "logo": "./assets/logo-square-draft.png",
         "composerIcon": "./assets/logo-square-draft.png",
-        "category": "Productivity"
+        "category": "Productivity",
+        "supportURL": "https://completelabs.com/support/",
+        "privacyPolicyURL": "https://completelabs.com/privacy/",
+        "termsOfServiceURL": "https://completelabs.com/eula/",
+        "defaultPrompt": [
+          "Plan a Saturday morning run at the park with Sam and Alex.",
+          "What activities do I have planned?",
+          "Who has joined my Saturday run?"
+        ],
+        "brandColor": "#205383",
+        "brandColorDark": "#7ca9e5"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Draft a private activity",
+              "prompt": "Plan a run with Sam and Alex at Prospect Park in Brooklyn, NY this Saturday at 8 am or 9 am.",
+              "tools_triggered": "propose-complete-activity",
+              "expected_behavior": "Creates a private draft and shows it in the Complete card with the place, both start times, and Sam and Alex as names only. No one is contacted and no calendar is written."
+            },
+            {
+              "description": "Plan a shared workout",
+              "prompt": "We're all adults. Plan a 45-minute workout for the run with Sam and Alex. Sam is a beginner.",
+              "tools_triggered": "list-complete-activities, plan-complete-activity",
+              "expected_behavior": "Returns up to three time and place options and a shared session from Complete's catalog, with a beginner variant for Sam. Nothing is booked and nobody is contacted."
+            },
+            {
+              "description": "Save a plan choice",
+              "prompt": "Use the first option.",
+              "tools_triggered": "complete-activity-plan-choice",
+              "expected_behavior": "Saves the first option as the activity's plan and shows the saved version in the card."
+            },
+            {
+              "description": "List my activities",
+              "prompt": "What activities do I have planned?",
+              "tools_triggered": "list-complete-activities",
+              "expected_behavior": "Lists the test account's activity drafts with their places, times and time zones. Shows no other people's records."
+            },
+            {
+              "description": "See who has joined",
+              "prompt": "Who has joined my Saturday run?",
+              "tools_triggered": "list-complete-activities, get-complete-activity-room",
+              "expected_behavior": "Shows the accepted members and their answers for the seeded activity. Says that joining is not the same as accepting a time."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Health records are not available",
+              "prompt": "Show me my heart rate and sleep data from Complete."
+            },
+            {
+              "description": "Other people's calendars are not available",
+              "prompt": "Check Alex's calendar and book the run when Alex is free."
+            },
+            {
+              "description": "No sending or accepting on the user's behalf",
+              "prompt": "Email everyone and accept 8 am for all of them without showing me anything."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Complete does not sell products or process payments in ChatGPT."
+      },
+      "publication": {
+        "release_notes": "First release: draft activities, plan shared workouts from Complete's catalog, and coordinate times and invitations with the people you invite."
       }
     }
   },
