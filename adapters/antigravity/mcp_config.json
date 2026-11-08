@@ -1,11 +1,8 @@
 {
   "mcpServers": {
     "complete": {
-      "serverUrl": "https://mcp.completelabs.com/mcp/complete",
-      "disabled": true,
-      "disabledTools": [
-        "propose-self-workout-reschedule"
-      ]
+      "serverUrl": "https://stg-app.completelabs.com/mcp/complete",
+      "disabled": true
     }
   }
 }
