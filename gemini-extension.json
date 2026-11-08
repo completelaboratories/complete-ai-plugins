@@ -1,15 +1,10 @@
 {
   "name": "complete",
   "version": "0.1.0",
-  "description": "Authorized Complete athlete context. Review candidate; deployment and provider authentication remain gated.",
+  "description": "Plan workouts and activities with other people in Complete. Invite-only; requires a Complete account.",
   "mcpServers": {
     "complete": {
-      "httpUrl": "https://mcp.completelabs.com/mcp/complete",
-      "includeTools": [
-        "list-complete-profiles",
-        "get-complete-home",
-        "get-complete-athlete-context"
-      ]
+      "httpUrl": "https://stg-app.completelabs.com/mcp/complete"
     }
   },
   "contextFileName": "GEMINI.md"

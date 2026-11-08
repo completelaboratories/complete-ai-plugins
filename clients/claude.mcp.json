@@ -2,7 +2,7 @@
   "mcpServers": {
     "complete": {
       "type": "http",
-      "url": "https://mcp.completelabs.com/mcp/complete"
+      "url": "https://stg-app.completelabs.com/mcp/complete"
     }
   }
 }

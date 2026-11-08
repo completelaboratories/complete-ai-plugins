@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "complete",
   "version": "0.1.0",
-  "description": "Retrieve authorized Complete athlete context with source and freshness information. Review candidate; service access is gated.",
+  "description": "Plan workouts and activities with other people in Complete. Invite-only; requires a Complete account.",
   "author": {
     "name": "Complete Laboratories Inc",
     "email": "support@completelabs.com",
@@ -10,16 +10,17 @@
   },
   "homepage": "https://completelabs.com",
   "keywords": [
-    "athlete",
-    "training",
-    "development"
+    "workouts",
+    "activities",
+    "fitness",
+    "planning"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Complete",
-        "shortDescription": "Your athlete development",
-        "longDescription": "Read athlete profiles and development context explicitly authorized in Complete. Preserve source, freshness, and uncertainty. Scheduling proposals require a separate grant and athlete confirmation in Complete. Availability is subject to release approval.",
+        "shortDescription": "Plan workouts together",
+        "longDescription": "Draft a private activity, plan a workout for it from Complete's catalog, and coordinate it with the people you invite. Invitations are sent only when you press Invite in the Complete card, and RSVPs and time choices are actions you take in the card. When everyone accepts the same time, Complete sends the calendar invitation. Complete cannot read health records or other people's calendars. Access is invite-only and requires a Complete account.",
         "developerName": "Complete Laboratories Inc",
         "websiteURL": "https://completelabs.com",
         "capabilities": [],

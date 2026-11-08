@@ -1,7 +1,7 @@
 {
   "name": "complete",
   "version": "0.1.0",
-  "description": "Retrieve authorized athlete development context from Complete.",
+  "description": "Plan workouts and activities with other people in Complete.",
   "author": {
     "name": "Complete Laboratories Inc",
     "email": "support@completelabs.com",
