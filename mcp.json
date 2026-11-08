@@ -3,7 +3,7 @@
   "mcpServers": {
     "complete": {
       "type": "streamable-http",
-      "url": "https://stg-app.completelabs.com/mcp/complete"
+      "url": "https://mcp.completelabs.com"
     }
   }
 }

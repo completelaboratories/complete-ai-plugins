@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "complete": {
-      "serverUrl": "https://stg-app.completelabs.com/mcp/complete",
+      "serverUrl": "https://mcp.completelabs.com",
       "disabled": true
     }
   }
