@@ -42,7 +42,7 @@ activities at any time on the Complete website.
 
 You need a Complete account that Complete has enabled for ChatGPT.
 
-1. In ChatGPT, go to **Plugins**, select the **+** button, then
+1. In ChatGPT, go to **Plugins**, select **Add** (top right), then
    **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
    whether you can add custom MCP servers.
 2. Enter the name **Complete** and a short description.
@@ -63,10 +63,11 @@ current steps.
 Complete uses OAuth only. Never set authentication to **No authentication**,
 and never paste a token or password into a config file.
 
-## Other clients (untested)
+## Other clients (not yet supported)
 
-These files point at the same server. They are provided for people who want
-to try them; none has completed sign-in against the live server yet.
+These files point at the same server, but only ChatGPT can sign in today:
+Complete's sign-in accepts ChatGPT's client and no other yet. The files are
+here so these clients work once Complete supports them.
 
 | Client | File |
 |---|---|
@@ -78,13 +79,13 @@ to try them; none has completed sign-in against the live server yet.
 
 ## How sign-in works
 
-Clients that follow the MCP authorization spec need only the server address.
+ChatGPT needs only the server address; it discovers the rest.
 
 - Protected-resource metadata:
   `https://mcp.completelabs.com/.well-known/oauth-protected-resource`
 - Authorization server metadata:
   `https://mcp.completelabs.com/.well-known/oauth-authorization-server`
-- Clients identify themselves with a client ID metadata document (CIMD), so
+- ChatGPT identifies itself with its client ID metadata document (CIMD), so
   there is no client ID to register or enter.
 - Scopes: `https://mcp.completelabs.com/activity.read`, `activity.propose`,
   `activity.respond` and `activity.coordinate` under the same prefix.
