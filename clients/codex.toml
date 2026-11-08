@@ -1,4 +1,4 @@
 [mcp_servers.complete]
-url = "https://stg-app.completelabs.com/mcp/complete"
+url = "https://mcp.completelabs.com"
 enabled = false
 enabled_tools = ["list-complete-activities", "get-complete-activity", "get-complete-activity-room"]

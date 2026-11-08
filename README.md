@@ -11,14 +11,13 @@ behalf. It contains no backend code and no credentials.
 
 | | |
 |---|---|
-| Live MCP server | `https://stg-app.completelabs.com/mcp/complete` |
+| Live MCP server | `https://mcp.completelabs.com` |
 | Access | Invite-only. Only Complete accounts that Complete has enabled can sign in; it is not open for sign-up yet. |
 | Verified client | ChatGPT, as a custom MCP server |
 | Other clients | Configs are included but not yet tested against the live server |
 | ChatGPT plugin directory | Not submitted. Complete is not a listed ChatGPT plugin. |
 
-`stg-app.completelabs.com` is the address of Complete's live service. If it
-changes, this README and the config files will change with it.
+The server lives at the root of `mcp.completelabs.com`, with no path.
 
 ## What it does
 
@@ -47,12 +46,9 @@ You need a Complete account that Complete has enabled for ChatGPT.
    **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
    whether you can add custom MCP servers.
 2. Enter the name **Complete** and a short description.
-3. Under **Connection**, enter
-   `https://stg-app.completelabs.com/mcp/complete`.
-4. Set authentication to **OAuth** and enter the OAuth client details Complete
-   gave you when it enabled your account. ChatGPT can't fill these in by
-   itself yet, because Complete's sign-in service doesn't publish a discovery
-   document.
+3. Under **Connection**, enter `https://mcp.completelabs.com`.
+4. Set authentication to **OAuth**. Leave the client ID and endpoints empty:
+   ChatGPT finds them from the server address.
 5. Review the risk warning, select **I understand and want to continue**, then
    **Create as a plugin**.
 6. Sign in with your Complete account and approve the requested permissions.
@@ -82,12 +78,19 @@ to try them; none has completed sign-in against the live server yet.
 
 ## How sign-in works
 
-The server publishes its OAuth protected-resource metadata at
-`https://stg-app.completelabs.com/.well-known/oauth-protected-resource/mcp/complete`.
-It names the authorization server and the scopes. An unauthenticated request
-returns `401` with a `WWW-Authenticate` header that points to that document.
-The authorization server doesn't publish OAuth discovery metadata yet, so
-clients need the endpoints and client details entered by hand.
+Clients that follow the MCP authorization spec need only the server address.
+
+- Protected-resource metadata:
+  `https://mcp.completelabs.com/.well-known/oauth-protected-resource`
+- Authorization server metadata:
+  `https://mcp.completelabs.com/.well-known/oauth-authorization-server`
+- Clients identify themselves with a client ID metadata document (CIMD), so
+  there is no client ID to register or enter.
+- Scopes: `https://mcp.completelabs.com/activity.read`, `activity.propose`,
+  `activity.respond` and `activity.coordinate` under the same prefix.
+
+An unauthenticated request returns `401` with a `WWW-Authenticate` header
+that points to the protected-resource metadata.
 
 ## Support
 

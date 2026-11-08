@@ -4,7 +4,7 @@
   "description": "Plan workouts and activities with other people in Complete. Invite-only; requires a Complete account.",
   "mcpServers": {
     "complete": {
-      "httpUrl": "https://stg-app.completelabs.com/mcp/complete",
+      "httpUrl": "https://mcp.completelabs.com",
       "includeTools": [
         "list-complete-activities",
         "get-complete-activity",
