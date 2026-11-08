@@ -12,14 +12,13 @@ behalf. It contains no backend code and no credentials.
 | | |
 |---|---|
 | Live MCP server | `https://stg-app.completelabs.com/mcp/complete` |
-| Access | Invite-only. You need a Complete account that is on the invite list. |
-| Verified client | ChatGPT, as a custom connector in developer mode |
+| Access | Invite-only. Only Complete accounts that Complete has enabled can sign in; it is not open for sign-up yet. |
+| Verified client | ChatGPT, as a custom MCP server |
 | Other clients | Configs are included but not yet tested against the live server |
-| ChatGPT app directory | Not submitted. Complete is not a listed ChatGPT app. |
+| ChatGPT plugin directory | Not submitted. Complete is not a listed ChatGPT plugin. |
 
-The server is Complete's live service. The `stg-app` hostname is historical;
-a dedicated `mcp.completelabs.com` address is planned, and this README will
-change when it exists.
+`stg-app.completelabs.com` is the address of Complete's live service. If it
+changes, this README and the config files will change with it.
 
 ## What it does
 
@@ -37,28 +36,35 @@ same time, Complete sends the calendar invitation.
 
 The assistant cannot read health records, other people's calendars or busy
 times, and cannot connect your calendar for you. Calendar connection stays on
-the Complete website.
+the Complete website. You can withdraw an assistant's access to your
+activities at any time on the Complete website.
 
 ## Connect from ChatGPT
 
-1. Ask Complete (support@completelabs.com) to add your account to the invite
-   list.
-2. In ChatGPT, open **Settings → Apps & Connectors → Advanced settings** and
-   turn on **Developer mode**.
-3. Under **Apps & Connectors**, choose **Create** and enter:
-   - **Name:** Complete
-   - **MCP server URL:** `https://stg-app.completelabs.com/mcp/complete`
-   - **Authentication:** OAuth
-4. Complete the OAuth settings you were given with your invitation, then
-   sign in with your Complete account and approve the requested permissions.
-5. Start a chat, enable Complete for that chat, and ask something like
+You need a Complete account that Complete has enabled for ChatGPT.
+
+1. In ChatGPT, go to **Plugins**, select the **+** button, then
+   **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
+   whether you can add custom MCP servers.
+2. Enter the name **Complete** and a short description.
+3. Under **Connection**, enter
+   `https://stg-app.completelabs.com/mcp/complete`.
+4. Set authentication to **OAuth** and enter the OAuth client details Complete
+   gave you when it enabled your account. ChatGPT can't fill these in by
+   itself yet, because Complete's sign-in service doesn't publish a discovery
+   document.
+5. Review the risk warning, select **I understand and want to continue**, then
+   **Create as a plugin**.
+6. Sign in with your Complete account and approve the requested permissions.
+7. Start a new chat, type **@**, choose Complete, and ask something like
    "Plan a Saturday morning run with two friends."
 
-ChatGPT menu names change from time to time; if a step looks different, the
-setting is under developer mode for custom connectors. Developer mode is
-available on the ChatGPT plans that OpenAI allows it on.
+These steps follow OpenAI's
+[connect and test guide](https://developers.openai.com/apps-sdk/deploy/connect-chatgpt)
+as of November 2026. If ChatGPT's menus look different, that guide has the
+current steps.
 
-Complete uses OAuth only. Never set the connector to **No authentication**,
+Complete uses OAuth only. Never set authentication to **No authentication**,
 and never paste a token or password into a config file.
 
 ## Other clients (untested)
@@ -78,9 +84,10 @@ to try them; none has completed sign-in against the live server yet.
 
 The server publishes its OAuth protected-resource metadata at
 `https://stg-app.completelabs.com/.well-known/oauth-protected-resource/mcp/complete`.
-Clients that follow the MCP authorization spec read the authorization server
-and scopes from there. An unauthenticated request returns `401` with a
-`WWW-Authenticate` header that points to that document.
+It names the authorization server and the scopes. An unauthenticated request
+returns `401` with a `WWW-Authenticate` header that points to that document.
+The authorization server doesn't publish OAuth discovery metadata yet, so
+clients need the endpoints and client details entered by hand.
 
 ## Support
 
