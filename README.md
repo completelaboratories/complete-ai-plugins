@@ -12,8 +12,8 @@ behalf. It contains no backend code and no credentials.
 | | |
 |---|---|
 | Live MCP server | `https://mcp.completelabs.com` |
-| Access | Open to anyone 18 or older. New users create a Complete account on the sign-in page; Complete asks your age the first time you connect. |
-| Verified end to end | ChatGPT, as a custom MCP server |
+| Access | Open to anyone 13 or older (18 or older in Claude). New users create a Complete account on the sign-in page; Complete asks your age the first time you connect. |
+| Verified end to end | ChatGPT, as a custom MCP server. Last verified per assistant: see [TESTING.md](TESTING.md). |
 | Sign-in open to | Any assistant that supports remote MCP servers with OAuth: Claude, Gemini, Grok, Muse and others can register and reach Complete's sign-in. Not yet tested end to end with a real account. |
 | Assistant directories | Not submitted. Complete is not listed in any assistant's plugin or connector directory yet. |
 
@@ -40,7 +40,7 @@ activities at any time on the Complete website.
 
 ## Connect from ChatGPT
 
-You need a Complete account, or create one when you sign in. Complete in AI assistants is for people 18 or older.
+You need a Complete account, or create one when you sign in. Complete is for people 13 or older.
 
 1. In ChatGPT, go to **Plugins**, select **Add** (top right), then
    **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
@@ -73,12 +73,12 @@ names change often; each assistant's own help has the current steps.
 
 | Assistant | Where to add it | Notes |
 |---|---|---|
-| Claude | Settings → Connectors → Add custom connector | Claude Code: `.mcp.json` or `clients/claude.mcp.json` |
+| Claude | Settings → Connectors → Add custom connector | 18 or older. Claude Code: `.mcp.json` or `clients/claude.mcp.json` |
 | Gemini | gemini.google.com → Connected apps → add a custom app ([Google's help](https://support.google.com/gemini/answer/17209137)) | Google limits this to personal accounts in the US, 18 or over |
 | Grok | grok.com → Connectors → New connector → Custom | xAI limits custom connectors to some plans |
 | Muse (Meta AI) | Add a custom connector in Muse | |
-| Codex | `clients/codex.toml` (disabled by default) | |
-| Gemini CLI | `gemini-extension.json`, `GEMINI.md` | |
+| Codex | `clients/codex.toml` (disabled by default) | Limited to the read-only tools |
+| Gemini CLI | `gemini-extension.json`, `GEMINI.md` | Limited to the read-only tools |
 | Antigravity | `adapters/antigravity/` (disabled by default) | |
 | Agent Plugins manifest | `plugin.json`, `mcp.json` | |
 
