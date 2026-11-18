@@ -13,9 +13,9 @@ behalf. It contains no backend code and no credentials.
 |---|---|
 | Live MCP server | `https://mcp.completelabs.com` |
 | Access | Invite-only. Only Complete accounts that Complete has enabled can sign in; it is not open for sign-up yet. |
-| Verified client | ChatGPT, as a custom MCP server |
-| Other clients | Configs are included but not yet tested against the live server |
-| ChatGPT plugin directory | Not submitted. Complete is not a listed ChatGPT plugin. |
+| Verified end to end | ChatGPT, as a custom MCP server |
+| Sign-in open to | Any assistant that supports remote MCP servers with OAuth: Claude, Gemini, Grok, Muse and others can register and reach Complete's sign-in. Not yet tested end to end with a real account. |
+| Assistant directories | Not submitted. Complete is not listed in any assistant's plugin or connector directory yet. |
 
 The server lives at the root of `mcp.completelabs.com`, with no path.
 
@@ -63,30 +63,41 @@ current steps.
 Complete uses OAuth only. Never set authentication to **No authentication**,
 and never paste a token or password into a config file.
 
-## Other clients (not yet supported)
+## Connect from other assistants
 
-These files point at the same server, but only ChatGPT can sign in today:
-Complete's sign-in accepts ChatGPT's client and no other yet. The files are
-here so these clients work once Complete supports them.
+You need a Complete account that Complete has enabled. Each assistant adds
+Complete as a custom remote MCP server with OAuth: enter
+`https://mcp.completelabs.com`, leave any client ID or secret empty, then sign
+in with your Complete account and approve the requested permissions. Menu
+names change often; each assistant's own help has the current steps.
 
-| Client | File |
-|---|---|
-| Claude (remote connector / Claude Code) | `.mcp.json`, `clients/claude.mcp.json` |
-| Codex | `clients/codex.toml` (disabled by default) |
-| Gemini CLI | `gemini-extension.json`, `GEMINI.md` |
-| Antigravity | `adapters/antigravity/` (disabled by default) |
-| Agent Plugins manifest | `plugin.json`, `mcp.json` |
+| Assistant | Where to add it | Notes |
+|---|---|---|
+| Claude | Settings → Connectors → Add custom connector | Claude Code: `.mcp.json` or `clients/claude.mcp.json` |
+| Gemini | gemini.google.com → Connected apps → add a custom app ([Google's help](https://support.google.com/gemini/answer/17209137)) | Google limits this to personal accounts in the US, 18 or over |
+| Grok | grok.com → Connectors → New connector → Custom | xAI limits custom connectors to some plans |
+| Muse (Meta AI) | Add a custom connector in Muse | |
+| Codex | `clients/codex.toml` (disabled by default) | |
+| Gemini CLI | `gemini-extension.json`, `GEMINI.md` | |
+| Antigravity | `adapters/antigravity/` (disabled by default) | |
+| Agent Plugins manifest | `plugin.json`, `mcp.json` | |
+
+These connections reach Complete's sign-in today but have not yet been tested
+end to end with a real account. If one fails, write to
+support@completelabs.com.
 
 ## How sign-in works
 
-ChatGPT needs only the server address; it discovers the rest.
+An assistant needs only the server address; it discovers the rest.
 
 - Protected-resource metadata:
   `https://mcp.completelabs.com/.well-known/oauth-protected-resource`
 - Authorization server metadata:
   `https://mcp.completelabs.com/.well-known/oauth-authorization-server`
-- ChatGPT identifies itself with its client ID metadata document (CIMD), so
-  there is no client ID to register or enter.
+- Assistants identify themselves with a client ID metadata document (CIMD),
+  as ChatGPT does, or register automatically (dynamic client registration at
+  `https://mcp.completelabs.com/oauth/register`), so there is no client ID to
+  enter. PKCE (S256) is required.
 - Scopes: `https://mcp.completelabs.com/activity.read`, `activity.propose`,
   `activity.respond` and `activity.coordinate` under the same prefix.
 
