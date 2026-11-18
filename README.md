@@ -12,7 +12,7 @@ behalf. It contains no backend code and no credentials.
 | | |
 |---|---|
 | Live MCP server | `https://mcp.completelabs.com` |
-| Access | Invite-only. Only Complete accounts that Complete has enabled can sign in; it is not open for sign-up yet. |
+| Access | Open to anyone 18 or older. New users create a Complete account on the sign-in page; Complete asks your age the first time you connect. |
 | Verified end to end | ChatGPT, as a custom MCP server |
 | Sign-in open to | Any assistant that supports remote MCP servers with OAuth: Claude, Gemini, Grok, Muse and others can register and reach Complete's sign-in. Not yet tested end to end with a real account. |
 | Assistant directories | Not submitted. Complete is not listed in any assistant's plugin or connector directory yet. |
@@ -40,7 +40,7 @@ activities at any time on the Complete website.
 
 ## Connect from ChatGPT
 
-You need a Complete account that Complete has enabled for ChatGPT.
+You need a Complete account, or create one when you sign in. Complete in AI assistants is for people 18 or older.
 
 1. In ChatGPT, go to **Plugins**, select **Add** (top right), then
    **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
@@ -65,7 +65,7 @@ and never paste a token or password into a config file.
 
 ## Connect from other assistants
 
-You need a Complete account that Complete has enabled. Each assistant adds
+You need a Complete account, or create one when you sign in. Each assistant adds
 Complete as a custom remote MCP server with OAuth: enter
 `https://mcp.completelabs.com`, leave any client ID or secret empty, then sign
 in with your Complete account and approve the requested permissions. Menu
