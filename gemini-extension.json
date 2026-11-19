@@ -1,7 +1,7 @@
 {
   "name": "complete",
   "version": "0.1.0",
-  "description": "Plan workouts and activities with other people in Complete. Invite-only; requires a Complete account.",
+  "description": "Plan workouts and activities with other people in Complete. Requires a Complete account (13+; 18+ in Claude); sign up when you connect.",
   "mcpServers": {
     "complete": {
       "httpUrl": "https://mcp.completelabs.com",
