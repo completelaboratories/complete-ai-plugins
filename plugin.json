@@ -28,8 +28,8 @@
           "Plan workouts",
           "Coordinate times and invitations"
         ],
-        "logo": "./assets/logo-square-draft.png",
-        "composerIcon": "./assets/logo-square-draft.png",
+        "logo": "./assets/logo-square.png",
+        "composerIcon": "./assets/logo-square.png",
         "category": "Productivity",
         "supportURL": "https://completelabs.com/support/",
         "privacyPolicyURL": "https://completelabs.com/privacy/",
