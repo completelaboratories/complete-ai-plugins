@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "complete",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Plan workouts and activities with other people in Complete. Requires a Complete account (13+; 18+ in Claude); sign up when you connect.",
   "author": {
     "name": "Complete Laboratories Inc",
@@ -37,7 +37,7 @@
         "defaultPrompt": [
           "Plan a Saturday morning run at the park with Sam and Alex.",
           "What activities do I have planned?",
-          "Who has joined my Saturday run?"
+          "What are my activity preferences?"
         ],
         "brandColor": "#205383",
         "brandColorDark": "#7ca9e5"
@@ -74,12 +74,6 @@
               "prompt": "What activities do I have planned?",
               "tools_triggered": "list-complete-activities",
               "expected_behavior": "Lists the test account's activity drafts with their places, times and time zones. Shows no other people's records."
-            },
-            {
-              "description": "See who has joined",
-              "prompt": "Who has joined my Saturday run?",
-              "tools_triggered": "list-complete-activities, get-complete-activity-room",
-              "expected_behavior": "Shows the accepted members and their answers for the seeded activity. Says that joining is not the same as accepting a time."
             }
           ],
           "negative": [

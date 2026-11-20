@@ -3,7 +3,17 @@
   "mcpServers": {
     "complete": {
       "type": "streamable-http",
-      "url": "https://mcp.completelabs.com"
+      "url": "https://mcp.completelabs.com",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "cimd"
+            }
+          }
+        }
+      }
     }
   }
 }
