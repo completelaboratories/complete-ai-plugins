@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "complete",
   "version": "0.1.0",
-  "description": "Plan workouts and activities with other people in Complete. Requires a Complete account (13+; 18+ in Claude); sign up when you connect.",
+  "description": "Plan workouts and activities with other people in Complete. Requires a Complete account (13 and over with a guardian, 18 and over otherwise; Claude is 18 or older); sign up when you connect.",
   "author": {
     "name": "Complete Laboratories Inc",
     "email": "support@completelabs.com",
@@ -20,7 +20,7 @@
       "interface": {
         "displayName": "Complete",
         "shortDescription": "Plan workouts together",
-        "longDescription": "Draft a private activity, plan a workout for it from Complete's catalog, and coordinate it with the people you invite. Invitations are sent only when you press Invite in the Complete card, and RSVPs and time choices are actions you take in the card. When everyone accepts the same time, Complete sends the calendar invitation. Complete cannot read health records or other people's calendars. You need a Complete account, which you can create when you sign in. Complete is for people 13 or older.",
+        "longDescription": "Draft a private activity, plan a workout for it from Complete's catalog, and coordinate it with the people you invite. Invitations are sent only when you press Invite in the Complete card, and RSVPs and time choices are actions you take in the card. When everyone accepts the same time, Complete sends the calendar invitation. Complete cannot read health records or other people's calendars. You need a Complete account, which you can create when you sign in. Complete is for people 13 and over with a guardian, 18 and over otherwise.",
         "developerName": "Complete Laboratories Inc",
         "websiteURL": "https://completelabs.com",
         "capabilities": [
