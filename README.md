@@ -12,7 +12,7 @@ behalf. It contains no backend code and no credentials.
 | | |
 |---|---|
 | Live MCP server | `https://mcp.completelabs.com` |
-| Access | Open to anyone 13 or older (18 or older in Claude). New users create a Complete account on the sign-in page; Complete asks your age the first time you connect. |
+| Access | Complete is for people 13 and over with a guardian, 18 and over otherwise. Each assistant also has its own minimum age (Claude: 18 or older). New users create a Complete account on the sign-in page; Complete asks your age the first time you connect. |
 | Verified end to end | ChatGPT, as a custom MCP server. Last verified per assistant: see [TESTING.md](TESTING.md). |
 | Sign-in open to | Any assistant that supports remote MCP servers with OAuth: Claude, Gemini, Grok, Muse and others can register and reach Complete's sign-in. Not yet tested end to end with a real account. |
 | Assistant directories | Not submitted. Complete is not listed in any assistant's plugin or connector directory yet. |
@@ -39,9 +39,44 @@ times, and cannot connect your calendar for you. Calendar connection stays on
 the Complete website. You can withdraw an assistant's access to your
 activities at any time on the Complete website.
 
+## Tools
+
+The full guide for assistants, with when to use each tool, is
+[skills/complete-context/SKILL.md](skills/complete-context/SKILL.md). Which
+tools appear depends on what is turned on for your account.
+
+The assistant can call these:
+
+| Tool | What it does |
+|---|---|
+| `list-complete-activities` | Lists up to 20 of your own activity drafts (read only) |
+| `get-complete-activity` | Reopens one draft and its current revision; checks whether an interrupted edit applied (read only) |
+| `get-complete-activity-room` | Shows an activity's group: who has joined, their answers and where the time stands (read only) |
+| `propose-complete-activity` | Creates a private draft: activity, place, offered start times and the people you named |
+| `edit-complete-activity` | Replaces the draft with an updated proposal at its current revision |
+| `complete-activity-preferences` | Records, lists or removes the preferences and limits you state, and your gym memberships; health conditions are not accepted |
+| `complete-activity-groups` | Matches a name you say to someone you have done an activity with or to a saved group, and saves or removes groups when you ask |
+| `plan-complete-activity` | Plans up to three time and place options and a shared workout from Complete's catalog (adults only) |
+| `complete-activity-plan-choice` | Saves the plan you pick or an edit you ask for as a new version, and shows saved versions |
+
+These are buttons in the Complete card. Only you can press them, and the
+assistant never calls them:
+
+| Tool | Button |
+|---|---|
+| `send-complete-activity-invitations` | Invite: emails each invitee their own invitation |
+| `coordinate-complete-activity` | Offer time choices or propose one exact time |
+| `respond-complete-activity-invitation` | RSVP, accept an exact time, or say you're unavailable |
+| `get-complete-activity-invitation` | Refresh an invitation |
+| `get-complete-activity-calendar-review-link` | Open the calendar review on the Complete website |
+| `confirm-complete-activity-membership` | Confirm whether you belong to the activity's gym |
+
+Payments, where they apply, are also yours to make in Complete, never the
+assistant's.
+
 ## Connect from ChatGPT
 
-You need a Complete account, or create one when you sign in. Complete is for people 13 or older.
+You need a Complete account, or create one when you sign in. Complete is for people 13 and over with a guardian, 18 and over otherwise.
 
 1. In ChatGPT, go to **Plugins**, select **Add** (top right), then
    **Add custom MCP server**. Your ChatGPT plan and workspace settings decide
