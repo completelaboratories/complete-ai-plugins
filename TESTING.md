@@ -12,7 +12,7 @@ Server address: `https://mcp.completelabs.com`. Use a new account created during
 - [ ] Requested scopes are shown and approval completes
 - [ ] `list-complete-activities` returns the account's (empty) list
 - [ ] `propose-complete-activity` creates a draft and the card renders (or the text fallback is acceptable where cards aren't supported)
-- [ ] The Invite button in the card works; the assistant never sends invitations itself
+- [ ] The Invite button in the card works (ChatGPT and Claude only; elsewhere, inviting from the activity's share page on the Complete website works); the assistant never sends invitations itself
 - [ ] Revoking access on the Complete website stops the assistant's access
 
 ## Results

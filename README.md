@@ -25,6 +25,7 @@ With your permission, the assistant can:
 
 - draft a private activity (what, where, when, who) and edit it
 - plan a workout for the activity from Complete's fixed workout catalog
+  (catalog workouts are for adults 18 and over)
 - show an activity and its group room: who has joined, and their answers
 - help you invite people by email and agree on a time
 
@@ -70,6 +71,10 @@ Complete as a custom remote MCP server with OAuth: enter
 `https://mcp.completelabs.com`, leave any client ID or secret empty, then sign
 in with your Complete account and approve the requested permissions. Menu
 names change often; each assistant's own help has the current steps.
+
+The Complete card's buttons (Invite, RSVP, time offers) appear only in ChatGPT
+and Claude today. In other assistants, send invitations from the activity's
+share page on the Complete website.
 
 | Assistant | Where to add it | Notes |
 |---|---|---|
