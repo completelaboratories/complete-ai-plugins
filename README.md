@@ -54,13 +54,17 @@ The assistant can call these:
 | `get-complete-activity-room` | Shows an activity's group: who has joined, their answers and where the time stands (read only) |
 | `propose-complete-activity` | Creates a private draft: activity, place, offered start times and the people you named |
 | `edit-complete-activity` | Replaces the draft with an updated proposal at its current revision |
-| `complete-activity-preferences` | Records, lists or removes the preferences and limits you state, and your gym memberships; health conditions are not accepted |
-| `complete-activity-groups` | Matches a name you say to someone you have done an activity with or to a saved group, and saves or removes groups when you ask |
+| `complete-activity-preferences` | Records and lists the preferences and limits you state, and your gym memberships; health conditions are not accepted |
+| `remove-complete-activity-preference` | Removes a preference or ends a gym membership when you ask (marked destructive) |
+| `complete-activity-groups` | Matches a name you say to someone you have done an activity with or to a saved group (read only) |
+| `save-complete-activity-group` | Saves a group of people you have done an activity with; saving over a group replaces its members (marked destructive) |
+| `delete-complete-activity-group` | Deletes a saved group when you ask (marked destructive) |
 | `plan-complete-activity` | Plans up to three time and place options and a shared workout from Complete's catalog (adults only) |
 | `complete-activity-plan-choice` | Saves the plan you pick or an edit you ask for as a new version, and shows saved versions |
 
-These are buttons in the Complete card. Only you can press them, and the
-assistant never calls them:
+These six are app-only card actions: buttons in the Complete card. They are
+hidden from the model, only you can press them, and the assistant never calls
+them:
 
 | Tool | Button |
 |---|---|

@@ -23,15 +23,20 @@ Which tools appear depends on what is turned on for the user's account. Use only
 
 **`edit-complete-activity`**. Replaces the draft with an updated proposal. Send the whole proposal, unchanged details and invitees included, with the current `expected_revision` and a new `request_id` (reuse it only when retrying the same edit). If the draft changed since you read it, you get a conflict: reopen it and resolve the change with the user rather than overwrite it.
 
-**`complete-activity-preferences`**. Records, lists or removes preferences and limits.
+**`complete-activity-preferences`**. Records and lists preferences and limits. A new value for the same preference replaces the current one.
 - `list` before you plan, so plans respect the user's hard limits.
 - `state` only when the user tells you something, and only as they said it. `subject: self` is the user's own (lasting unless temporary); `subject: invitee` is what the organizer said about a named invitee, kept for that activity only.
 - Strength: `hard` for a stated limit (never, at most, can't), `soft` for a preference (the default), `temporary` for this activity only.
-- `revoke` removes a preference; `end_membership` removes a gym membership.
 - How hard and how high-impact: `intensity` is easy, moderate or hard (it lowers the workout, never raises it above the person's experience); `low_impact` is true when the person asks for no jumping, hopping or running. "Keep it easy" is `intensity: easy`; "nothing that pounds my knees" is `low_impact: true`.
 - Send the limit, never the reason. Health conditions and diagnoses are not accepted: when someone mentions an injury or condition, record only what they asked for (a movement to avoid, low impact, an easier session, a shorter one) and leave the reason out. Equipment and gym access count only once the person confirms them in the card.
 
-**`complete-activity-groups`**. Works with the user's connections (people they have done a confirmed activity with) and saved groups. `resolve` matches a name the user said to a connection or group and reports ambiguity instead of guessing; ask the user which person they mean. `connections` and `list` read, and `save` and `delete` change a group only when the user asks. It adds no strangers and looks nobody up.
+**`remove-complete-activity-preference`** (destructive). Removes one saved preference (`preference_id`) or ends one gym membership (`membership_id`), only when the user asks. Plans made afterwards no longer use it.
+
+**`complete-activity-groups`** (read only). Reads the user's connections (people they have done a confirmed activity with) and saved groups. `resolve` matches a name the user said to a connection or group and reports ambiguity instead of guessing; ask the user which person they mean. It changes nothing, adds no strangers and looks nobody up.
+
+**`save-complete-activity-group`** (destructive). Saves a named group of 1 to 20 connections, only when the user asks. Saving over an existing group replaces its members.
+
+**`delete-complete-activity-group`** (destructive). Deletes a saved group, only when the user asks. The people in it stay connections.
 
 **`plan-complete-activity`**. Plans a draft: up to three time and place options checked against each person's stated limits, and a shared session with a version for each person, from Complete's fixed exercise catalog. Set `everyone_is_18_or_older` to true only when the organizer said every participant is 18 or older; otherwise no workout content is produced. When the activity has a place, give its opening hours on the offered days (`place_hours`), and its kind and operator if you know them. Use `focus` for a strength focus the organizer asked for and `request`, in their words, when planning again. An option that depends on a fact nobody stated is marked conditional. The card may ask the organizer questions, such as whether they belong to the gym. Nothing is booked and nobody is contacted.
 
